@@ -35,7 +35,7 @@ const requestPermissions = async (
   let hasRecordAudioPermissions = false;
 
   if (Platform.OS === 'ios') {
-    hasCameraPermissions = await CameraManager.checkVideoAuthorizationStatus();
+    hasCameraPermissions = await CameraManager.checkDeviceAuthorizationStatus();
   } else if (Platform.OS === 'android') {
     const cameraPermissionResult = await PermissionsAndroid.request(
       PermissionsAndroid.PERMISSIONS.CAMERA,
